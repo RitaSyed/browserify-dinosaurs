@@ -1,19 +1,20 @@
 // const domEvents = require('./events');
 
+const domEvents = require('./events');
+
 const outputDiv = document.getElementById('dinos');
-// require events
 
 const domString = (dinos) => {
   let strang = '';
   dinos.forEach((dino) => {
-    strang += `<h2>${dino.type}</h2>`;
+    strang += `<h2 class="dino">${dino.type}</h2>`;
   });
   return strang;
 };
 
 const printToDom = (dinoArray) => {
-  outputDiv.inner = domString(dinoArray);
-  // domEvents();
+  outputDiv.innerHTML = domString(dinoArray);
+  domEvents();
 };
 
 module.exports = printToDom;
